@@ -21,15 +21,17 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - xorg-edgers-ppa
+#      - xorg-edgers-ppa
     packages:
       - gcc-4.8
       - g++-4.8
-      - Xorg
+#      - Xorg
       - mesa-utils
 
 install:
 #  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
+  - sudo apt-get update -qq
+  - sudo apt-get install -y xorg xserver-xorg-video-dummy
   - Xorg :200 >/dev/null 2>&1 &
   - sleep 5
   - CC=gcc-4.8 CXX=g++-4.8 python setup.py build_ext --inplace
