@@ -21,7 +21,7 @@ python:
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+#      - ubuntu-toolchain-r-test
 #      - xorg-edgers-ppa
     packages:
       - gcc-4.8
@@ -30,15 +30,15 @@ addons:
       - mesa-utils
 
 install:
-#  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
+ - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
   - sudo apt-get update -qq
   - sudo apt-get install -y xorg xserver-xorg-video-dummy
   - sudo Xorg +extension GLX +extension RANDR +extension RENDER -logfile xorg.log :200 >xorg.txt 2>&1 &
   - sleep 5
   - cat xorg.log
   - cat xorg.txt
-  - CC=gcc-4.8 CXX=g++-4.8 python setup.py build_ext --inplace
-  - pip install -e .
+#  - CC=gcc-4.8 CXX=g++-4.8 python setup.py build_ext --inplace
+#  - pip install -e .
   - export DISPLAY=:200
   - glxinfo | grep OpenGL
 #  - python setup.py install
