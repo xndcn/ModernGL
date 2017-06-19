@@ -15,8 +15,8 @@ matrix:
 
 python:
   - 3.6
-  - 3.5
-  - 3.4
+#  - 3.5
+#  - 3.4
 
 addons:
   apt:
@@ -24,8 +24,8 @@ addons:
 #      - ubuntu-toolchain-r-test
 #      - xorg-edgers-ppa
     packages:
-      - gcc-4.8
-      - g++-4.8
+#      - gcc-4.8
+#      - g++-4.8
 #      - Xorg
       - mesa-utils
 
