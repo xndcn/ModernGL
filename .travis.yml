@@ -36,7 +36,7 @@ install:
   - Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 >/dev/null 2>&1 &
 #  - sudo Xorg +extension GLX +extension RANDR +extension RENDER -logfile xorg.log :200 >xorg.txt 2>&1 &
   - sleep 5
-  - cat xorg.log
+  - cat 10.log
 #  - CC=gcc-4.8 CXX=g++-4.8 python setup.py build_ext --inplace
 #  - pip install -e .
   - export DISPLAY=:10
