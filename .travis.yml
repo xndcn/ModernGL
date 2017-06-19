@@ -33,7 +33,7 @@ install:
 #  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
   - sudo apt-get update -qq
   - sudo apt-get install -y xorg xserver-xorg-video-dummy
-  - Xorg :200 -logfile xorg.log >xorg.txt 2>&1 &
+  - sudo Xorg :200 -logfile xorg.log >xorg.txt 2>&1 &
   - sleep 5
   - cat xorg.log
   - cat xorg.txt
