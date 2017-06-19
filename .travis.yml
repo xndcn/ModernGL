@@ -32,7 +32,7 @@ addons:
 install:
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
   - sudo apt-get update
-  - sudo apt-get install -y xorg
+  - sudo apt-get install -y xorg xserver-xorg-video-dummy
   - Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 >/dev/null 2>&1 &
 #  - sudo Xorg +extension GLX +extension RANDR +extension RENDER -logfile xorg.log :200 >xorg.txt 2>&1 &
   - sleep 5
