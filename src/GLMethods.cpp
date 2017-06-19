@@ -1208,9 +1208,9 @@ bool GLMethods::load() {
 		AddToLog(&loading_log, "glVertexAttribIPointer");
 	}
 
-	if (INVALID_METHOD(this->VertexAttribLPointer)) {
-		AddToLog(&loading_log, "glVertexAttribLPointer");
-	}
+	// if (INVALID_METHOD(this->VertexAttribLPointer)) {
+	// 	AddToLog(&loading_log, "glVertexAttribLPointer");
+	// }
 
 	if (INVALID_METHOD(this->VertexAttribPointer)) {
 		AddToLog(&loading_log, "glVertexAttribPointer");
