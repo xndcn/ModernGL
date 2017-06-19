@@ -21,6 +21,7 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - xorg-edgers
     packages:
       - gcc-4.8
       - g++-4.8
