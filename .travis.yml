@@ -30,6 +30,9 @@ addons:
       - mesa-utils
 
 install:
+  - sudo add-apt-repository ppa:oibaf/graphics-drivers
+  - sudo apt-get update
+  - sudo apt-get upgrade
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
   - cat /etc/init.d/xvfb
 #  - sudo apt-get update
