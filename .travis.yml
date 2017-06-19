@@ -20,7 +20,7 @@ python:
 
 addons:
   apt:
-    sources:
+#    sources:
 #      - ubuntu-toolchain-r-test
 #      - xorg-edgers-ppa
     packages:
