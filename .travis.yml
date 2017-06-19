@@ -33,9 +33,10 @@ install:
 #  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
   - sudo apt-get update -qq
   - sudo apt-get install -y xorg xserver-xorg-video-dummy
-  - Xorg :200 >xorg.log 2>&1 &
+  - Xorg :200 -logfile xorg.log >xorg.txt 2>&1 &
   - sleep 5
   - cat xorg.log
+  - cat xorg.txt
   - CC=gcc-4.8 CXX=g++-4.8 python setup.py build_ext --inplace
   - pip install -e .
   - export DISPLAY=:200
