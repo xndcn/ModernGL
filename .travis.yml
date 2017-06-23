@@ -15,16 +15,16 @@ matrix:
 python:
   - 3.6
 
-# addons:
-#   apt:
-#     sources:
-#       - ubuntu-toolchain-r-test
-#     packages:
-#       - gcc-4.8
-#       - g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
 
 install:
-  - pip install git+https://github.com/cprogrammer1994/ModernGL -vvv
+  - CC=gcc-4.8 CXX=g++-4.8 pip install git+https://github.com/cprogrammer1994/ModernGL -vvv
   - python -c "import ModernGL"
 #  - CC=gcc-4.8 CXX=g++-4.8 python setup.py build_ext --inplace
 #  - python setup.py install
