@@ -14,6 +14,8 @@ matrix:
 
 python:
   - 3.6
+  - 3.5
+  - 3.4
 
 addons:
   apt:
@@ -24,8 +26,12 @@ addons:
       - g++-4.8
 
 install:
+#  - pip install git+https://github.com/cprogrammer1994/ModernGL -vvv
   - CC=gcc-4.8 CXX=g++-4.8 pip install git+https://github.com/cprogrammer1994/ModernGL -vvv
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
   - python -c "import ModernGL"
+  - glxinfo | grep OpenGL
+
 #  - CC=gcc-4.8 CXX=g++-4.8 python setup.py build_ext --inplace
 #  - python setup.py install
 
