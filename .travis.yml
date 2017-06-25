@@ -27,9 +27,9 @@ python:
 
 install:
   - pip install ModernGL
-  - cat /home/travis/virtualenv/python3.6.2rc1/lib/python3.6/site-packages/ModernGL/__init__.py
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
-  - python -c "import ModernGL.mgl"
+  - sed -i '/ from None/s/ from None//g' /home/travis/virtualenv/python3.6.2rc1/lib/python3.6/site-packages/ModernGL/__init__.py
+  - cat /home/travis/virtualenv/python3.6.2rc1/lib/python3.6/site-packages/ModernGL/__init__.py
   - python -c "import ModernGL"
 
 #  - CC=gcc-4.8 CXX=g++-4.8 pip install ModernGL
