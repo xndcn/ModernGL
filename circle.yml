@@ -5,7 +5,10 @@ machine:
 dependencies:
   post:
     - pip install -U ModernGL Pillow Pyrr numpy
+    - wget https://raw.githubusercontent.com/cprogrammer1994/ModernGL/master/examples/standalone/01_hello_world.py
 
 test:
   override:
     - python -m ModernGL
+    - python 01_hello_world.py
+    - ls
