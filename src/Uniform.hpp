@@ -35,8 +35,8 @@ void MGLUniform_Invalidate(MGLUniform * uniform);
 void MGLUniform_Complete(MGLUniform * self, const GLMethods & gl);
 
 typedef void (GLAPI * gl_uniform_reader_proc)(GLuint program, GLint location, void * value);
-typedef void (GLAPI * gl_uniform_vector_writer_proc)(GLuint program, GLint location, GLsizei count, const void * value);
-typedef void (GLAPI * gl_uniform_matrix_writer_proc)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const void * value);
+typedef void (GLAPI * gl_uniform_vector_writer_proc)(GLint location, GLsizei count, const void * value);
+typedef void (GLAPI * gl_uniform_matrix_writer_proc)(GLint location, GLsizei count, GLboolean transpose, const void * value);
 
 typedef PyObject * (* MGLUniform_Getter)(MGLUniform * self);
 typedef int (* MGLUniform_Setter)(MGLUniform * self, PyObject * value);
